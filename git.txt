@@ -1,0 +1,59 @@
+
+- To list available environments in conda
+conda env list
+or
+conda info --envs
+
+
+- To create a venv
+conda create --name env_name python=3.11
+
+- To activate a venv
+conda activate env_name
+
+- To deactivate a venv
+conda deactivate
+
+- to clon a repo / to pull
+pip install https://git_url
+
+- Navigating oneself at shell prompt
+cd ../../../example_directory
+
+- Export the environment configuration
+conda env_name export --file environment.yml
+
+- Create a new environment based on the exported configuration in another environment:
+conda env create -f environment.yml
+
+- to delete an env
+conda env remove --name your_env_name
+
+
+#############
+## to push ##
+
+- go to the repo
+cd /path/to/local/repository
+
+- check the status of the repo
+git status
+
+- select it~
+git add .
+git commit -m "Your commit message"
+
+- check the push back url
+git remote -v
+
+- change the push back url if necessary
+git remote set-url origin <new_repository_url>
+
+- if there is no push back url, then add it
+git remote add origin <repository_url>
+
+- push to Github
+git push origin branch_name
+git push -u origin branch_name
+
+###########################
