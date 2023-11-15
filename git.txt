@@ -99,3 +99,22 @@ git stash apply
 
 - to drop changes (but be careful with the content of the file because it also delete all unsaved changes AND THEY MUST BE SAVED BY GIT NOT JUST FROM SYSTEM ITSELF )
 git reset --hard HEAD  
+
+
+### installation ###
+
+- ssh key generation
+ssh-keygen -t rsa -b 4096
+
+- we can access ssh key directly on a command line on windows
+type key_name.pub
+
+- if github doesnt recognise us, then we need ssh agent to force him to recognise/to add the ssh key 
+-- ssh agent activation
+ssh-agent -s
+
+-- ssh key addition to ssh agent
+ssh-add ssh_file_path/ssh_key 
+
+-- if everything works fine then this code must run without error
+ssh -T git@github.com
