@@ -87,8 +87,10 @@ git add -A
 git log
 then we have to press q to quit
 
-- to drop committed files
+- to drop committed staged files (this one writes it into logs/history)
 git rm --cached file.py
+- OR BETTER VERSION THIS SAVES EVERYTHING EVERYTHING (this one doesnt write into logs/history and just drops the staged files)
+git reset file.py
 
 - to save changes (but this one also doesnt save it properly)
 git stash
@@ -96,4 +98,4 @@ git stash
 git stash apply
 
 - to drop changes (but be careful with the content of the file because it also delete all unsaved changes AND THEY MUST BE SAVED BY GIT NOT JUST FROM SYSTEM ITSELF )
-git reset --hard HEAD
+git reset --hard HEAD  
