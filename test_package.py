@@ -4,4 +4,6 @@ class math_artihmetics:
         return x*y
 
     def substractor(x, y):
-        return x-y
+        print('x:', x, 'y:', y)
+	return x-y
+	
