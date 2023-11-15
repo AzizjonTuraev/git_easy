@@ -1,4 +1,3 @@
-
 - To list available environments in conda
 conda env list
 or
@@ -33,6 +32,16 @@ conda env remove --name your_env_name
 #############
 ## to push ##
 
+- to download a git project
+git clone SSH_KEY
+
+- to check on which branch are we at the moment
+git branch
+
+- to change from branches
+git checkout branch_name
+git switch branch_name
+
 - go to the repo
 cd /path/to/local/repository
 
@@ -57,3 +66,34 @@ git push origin branch_name
 git push -u origin branch_name
 
 ###########################
+- To update a local git project
+-- this one just takes the most recent one from the remote but doesnt apply yet
+git fetch origin
+
+-- we can update a specific branch with this code
+git pull origin branch_name
+
+-- we can update main branch here
+git pull origin main
+
+-- we can also merge
+git merge origin/your-branch-name
+
+
+- to add all changes 
+git add -A
+
+- to see the history/log of git activities
+git log
+then we have to press q to quit
+
+- to drop committed files
+git rm --cached file.py
+
+- to save changes (but this one also doesnt save it properly)
+git stash
+- to get back all changes after this we need to run this command 
+git stash apply
+
+- to drop changes (but be careful with the content of the file because it also delete all unsaved changes AND THEY MUST BE SAVED BY GIT NOT JUST FROM SYSTEM ITSELF )
+git reset --hard HEAD
