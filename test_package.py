@@ -1,6 +1,7 @@
 class math_artihmetics:
 
     def multiplicator(x, y):
+	print('x*y')
         return x*y
 
     def substractor(x, y):
