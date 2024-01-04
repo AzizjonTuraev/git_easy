@@ -118,3 +118,20 @@ ssh-add ssh_file_path/ssh_key
 
 -- if everything works fine then this code must run without error
 ssh -T git@github.com
+
+
+
+
+
+
+
+
+******************** To add a branch to an existing GitHub in VS Code
+
+git init.
+git add README.md
+git commit -m "first commit"
+git branch -M branch_name
+git remote add origin https://github.com/my_project.git
+git push -u origin branch_name
+
