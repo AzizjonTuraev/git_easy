@@ -38,6 +38,9 @@ git clone SSH_KEY
 - to check on which branch are we at the moment
 git branch
 
+- to create a new branch
+git checkout -b branch_name
+
 - to change from branches
 git checkout branch_name
 git switch branch_name
