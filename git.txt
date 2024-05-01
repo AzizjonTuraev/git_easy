@@ -138,3 +138,12 @@ git branch -M branch_name
 git remote add origin https://github.com/my_project.git
 git push -u origin branch_name
 
+
+*********************** To add a SSH Key
+eval "$(ssh-agent -s)"    # starting the agent
+ssh-add /c/Users/Azizjon/.ssh/gitlab_file   # add the key by showing the full path
+ssh-add -l               # verify if you added the key
+
+
+
+
