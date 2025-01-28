@@ -7,6 +7,8 @@ conda info --envs
 - To create a venv
 conda create --name env_name python=3.11
 
+python -m venv env_name # this one creates a python environment, which then must be activated by using source env_name/bin/activate
+
 - To activate a venv
 conda activate env_name
 
