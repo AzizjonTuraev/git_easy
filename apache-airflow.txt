@@ -1,0 +1,37 @@
+# https://www.youtube.com/watch?v=Sva8rDtlWi4   # installation  
+# https://www.youtube.com/watch?v=K9AnJ9_ZAXE   # usage
+
+# to fetch apache airflow docker file using docker 
+curl 'https://airflow.apache.org/docs/apache-airflow/2.10.5/docker-compose.yaml' -o 'docker-compose.yaml'
+
+
+mkdir logs
+mkdir dags
+mkdir plugins
+
+docker compose up airflow-init
+docker compose up
+docker compose down
+
+# go to http://localhost:8080/home on a web browser
+# find credentials on a docker file and there you can change it as well
+# usually user: airflow pswd: airflow
+
+
+# find this on a docker file and make it false not to have example airflow tasks:
+# AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+# then make docker compose down and then up again
+
+
+docker-compose down -v  # Stops and removes old containers
+docker-compose up -d --build  # Rebuilds with new volumes
+
+
+# getcwd
+opt/airflow/ ..
+- logs
+- dags
+- plugins
+
+# if you want to add a new folder then make it recognized by saving into docker-compose.yaml
+# then you have to make docker-compose.yaml also recognise each file in the folder

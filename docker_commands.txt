@@ -1,0 +1,57 @@
+docker ps -a      # Should show all containers
+docker images -a  # Should show all images
+docker volume ls  # Should show all volumes
+docker system df  # Shows disk usage
+
+# List all images with sizes
+docker images --format "{{.ID}}\t{{.Repository}}\t{{.Tag}}\t{{.Size}}"
+
+# List running containers
+docker ps
+
+# Inspect a specific volume
+docker volume inspect <volume_name>
+
+# Stop a running container
+docker stop <container_id_or_name>
+
+# Remove a stopped container
+docker rm <container_id_or_name>
+
+# Force remove a running container
+docker rm -f <container_id_or_name>
+
+# Remove all stopped containers
+docker container prune
+
+
+# Remove a specific image
+docker rmi <image_id_or_name>
+
+# Force remove an image (even if in use)
+docker rmi -f <image_id_or_name>
+
+# Remove dangling images (untagged)
+docker image prune
+
+# Remove all unused images (not just dangling)
+docker image prune -a
+
+
+# Remove a specific volume
+docker volume rm <volume_name>
+
+# Remove all unused volumes
+docker volume prune
+
+
+docker builder prune # Delete All Unused Build Cache
+docker builder prune -a  # Delete ALL Build Cache (including currently used)
+docker builder prune --all  # Delete ALL Build Cache (including currently used)
+
+docker builder prune --filter 'until=24h'  # Delete Build Cache Older Than a Certain Time
+docker builder prune --filter 'until=168h' --keep-storage 2GB   #  Delete Build Cache While Keeping Recent Items
+bash
+
+# Full System Cleanup (Including Build Cache)
+docker system prune -a --volumes 
