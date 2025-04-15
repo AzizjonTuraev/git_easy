@@ -1,0 +1,36 @@
+if i want to create a proper account access for both base, devop and prod accounts, then the credentials and config files look like that below:
+
+# ~/.aws/credentials
+[default]
+aws_access_key_id = YOUR_BASE_ACCESS_KEY
+aws_secret_access_key = YOUR_BASE_SECRET_KEY
+
+
+
+# ~/.aws/config
+[default]
+region = eu-central-1
+output = json
+
+[profile prod]
+role_arn = arn:aws:iam::123456789012:role/ProdAccessRole
+source_profile = default
+region = eu-central-1
+output = json
+
+[profile devops]
+role_arn = arn:aws:iam::987654321098:role/DevOpsAccessRole
+source_profile = default
+region = eu-central-1
+output = json
+
+
+# using
+# Using default credentials
+aws s3 ls
+
+# Using Prod role
+aws s3 ls --profile prod
+
+# Using DevOps role
+aws s3 ls --profile devops
